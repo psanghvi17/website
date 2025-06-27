@@ -82,6 +82,35 @@ To use a custom domain:
 
 ## 🔍 Troubleshooting
 
+### CSS Not Loading (Plain Text Appearance)
+
+If your site appears as plain text without styling:
+
+1. **Check the repository name:**
+   - For `username.github.io` repositories: Use `BASE_PATH=""`
+   - For custom repositories: Use `BASE_PATH="/repository-name"`
+
+2. **Test locally with correct BASE_PATH:**
+   ```bash
+   # For username.github.io repositories
+   npm run build:gh-pages
+   
+   # For custom repositories (replace "website" with your repo name)
+   npm run build:gh-pages-custom
+   ```
+
+3. **Check browser developer tools:**
+   - Open browser dev tools (F12)
+   - Go to Network tab
+   - Reload the page
+   - Look for failed CSS requests (404 errors)
+   - Check the actual URLs being requested
+
+4. **Verify GitHub Actions logs:**
+   - Go to your repository → Actions
+   - Check the latest deployment
+   - Look for any build errors or warnings
+
 ### Common Issues
 
 1. **404 Errors**: Check that `BASE_PATH` is set correctly

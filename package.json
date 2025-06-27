@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:gh-pages": "NODE_ENV=production BASE_PATH=\"\" next build",
+    "build:gh-pages-custom": "NODE_ENV=production BASE_PATH=\"/website\" next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"

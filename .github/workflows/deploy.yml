@@ -35,13 +35,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
+      - name: Set BASE_PATH
+        id: base_path
+        run: |
+          if [[ "${{ github.repository }}" == "${{ github.repository_owner }}.github.io" ]]; then
+            echo "BASE_PATH=" >> $GITHUB_ENV
+          else
+            echo "BASE_PATH=/${{ github.event.repository.name }}" >> $GITHUB_ENV
+          fi
+      
       - name: Build with Next.js
         run: npm run build
         env:
-          # Set the base path for GitHub Pages
-          # If your repository is named "my-website", set BASE_PATH to "/my-website"
-          # If you want to deploy to username.github.io, set BASE_PATH to ""
-          BASE_PATH: ""
+          BASE_PATH: ${{ env.BASE_PATH }}
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
