@@ -121,7 +121,18 @@ Built with a mobile-first approach using Tailwind CSS responsive utilities. The 
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### GitHub Pages (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+**Quick Setup:**
+1. Create a repository named `yourusername.github.io` (for root domain) or any other name
+2. Push your code to the repository
+3. The GitHub Actions workflow will automatically build and deploy your site
+
+**For detailed instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)**
+
+### Vercel (Alternative)
 
 1. Push your code to GitHub
 2. Import your repository to Vercel
