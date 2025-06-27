@@ -38,9 +38,10 @@ jobs:
       - name: Set BASE_PATH
         id: base_path
         run: |
-          if [[ "${{ github.repository }}" == "${{ github.repository_owner }}.github.io" ]]; then
+          # Check if custom domain is configured (you can add your custom domain here)
+          if [[ "${{ github.repository }}" == "${{ github.repository_owner }}.github.io" ]] || [[ "${{ github.event.repository.name }}" == "website" ]]; then
             echo "BASE_PATH=" >> $GITHUB_ENV
-            echo "Setting BASE_PATH to empty string for username.github.io repository"
+            echo "Setting BASE_PATH to empty string for custom domain or username.github.io repository"
           else
             echo "BASE_PATH=/${{ github.event.repository.name }}" >> $GITHUB_ENV
             echo "Setting BASE_PATH to /${{ github.event.repository.name }} for custom repository"

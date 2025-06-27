@@ -14,7 +14,8 @@ const nextConfig = {
   // For GitHub Pages, the basePath should match your repository name
   // If your repo is named "my-website", set basePath to "/my-website"
   // If you want to deploy to username.github.io, set basePath to ""
-  basePath: process.env.NODE_ENV === 'production' ? process.env.BASE_PATH || '' : '',
+  // For custom domains, set basePath to ""
+  basePath: process.env.NODE_ENV === 'production' ? (process.env.BASE_PATH || '') : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? (process.env.BASE_PATH || '') + '/' : '',
 }
 
