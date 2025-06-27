@@ -40,14 +40,27 @@ jobs:
         run: |
           if [[ "${{ github.repository }}" == "${{ github.repository_owner }}.github.io" ]]; then
             echo "BASE_PATH=" >> $GITHUB_ENV
+            echo "Setting BASE_PATH to empty string for username.github.io repository"
           else
             echo "BASE_PATH=/${{ github.event.repository.name }}" >> $GITHUB_ENV
+            echo "Setting BASE_PATH to /${{ github.event.repository.name }} for custom repository"
           fi
+          echo "Repository: ${{ github.repository }}"
+          echo "Repository Owner: ${{ github.repository_owner }}"
+          echo "Repository Name: ${{ github.event.repository.name }}"
+          echo "Final BASE_PATH: ${{ env.BASE_PATH }}"
       
       - name: Build with Next.js
-        run: npm run build
+        run: npm run build:gh-pages-debug
         env:
           BASE_PATH: ${{ env.BASE_PATH }}
+      
+      - name: Debug build output
+        run: |
+          echo "Checking if CSS file exists:"
+          ls -la out/_next/static/css/ || echo "CSS directory not found"
+          echo "Checking HTML file:"
+          head -c 500 out/index.html
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

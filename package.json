@@ -6,6 +6,7 @@
     "build": "next build",
     "build:gh-pages": "NODE_ENV=production BASE_PATH=\"\" next build",
     "build:gh-pages-custom": "NODE_ENV=production BASE_PATH=\"/website\" next build",
+    "build:gh-pages-debug": "echo 'Building with BASE_PATH: $BASE_PATH' && NODE_ENV=production next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
