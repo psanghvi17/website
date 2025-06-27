@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'website';
+
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
@@ -15,8 +18,8 @@ const nextConfig = {
   // If your repo is named "my-website", set basePath to "/my-website"
   // If you want to deploy to username.github.io, set basePath to ""
   // For custom domains, set basePath to ""
-  basePath: process.env.NODE_ENV === 'production' ? (process.env.BASE_PATH || '') : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? (process.env.BASE_PATH || '') + '/' : '',
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
 }
 
 export default nextConfig
