@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Navigation from '@/components/navigation'
 
 export const metadata: Metadata = {
   title: 'Pranay',
@@ -17,7 +18,12 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/website/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        <div className="pt-16">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
