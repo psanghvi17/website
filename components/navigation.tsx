@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, User, Rocket, BookOpen } from "lucide-react"
+import { Home, User, Rocket, BookOpen, GitBranch } from "lucide-react"
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -27,6 +27,11 @@ export default function Navigation() {
       href: "/my-story",
       label: "My Journey",
       icon: BookOpen,
+    },
+    {
+      href: "/professional-journey",
+      label: "Timeline",
+      icon: GitBranch,
     },
   ]
 
