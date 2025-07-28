@@ -8,7 +8,6 @@ export default function ProfessionalJourneyPage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
-    // Intersection Observer for fade-in animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -99,144 +98,144 @@ export default function ProfessionalJourneyPage() {
       side: "right",
       details: [
         "Launched my own software development company",
-        "Managed entire SDLC: requirements gathering, architecture, coding, testing, deployment, maintenance",
-        "Delivered 5 end-to-end projects single-handedly",
-        "Wearing all hats - developer, PM, client manager",
-        "Developed efficient processes and client communication",
-        "Built reputation and steady client base"
+        "Delivered 5+ projects as a solo developer",
+        "Managed end-to-end project lifecycle",
+        "Built client relationships and business processes",
+        "Established company foundation and reputation"
       ]
     },
     {
       id: 5,
       period: "2023 - Present",
-      title: "Team Lead & CEO",
-      role: "Company Founder",
-      company: "Scaling Up",
-      icon: "👨‍💼",
+      title: "Co-Founder & Team Leader",
+      role: "Company Co-Founder",
+      company: "Cozytech",
+      icon: "👥",
       color: "from-indigo-500 to-purple-500",
       side: "left",
       details: [
-        "Scaled the team from 1 to 6 developers",
-        "Oversaw 25+ full-cycle projects for diverse clients",
-        "Implemented Agile workflows, CI/CD pipelines, client-facing demos",
-        "750+ active SaaS users",
-        "100% client satisfaction",
-        "Profitable business model"
+        "Leading a team of 6 developers",
+        "Delivered 20+ successful projects",
+        "Managing multiple client relationships",
+        "Scaling business operations",
+        "Mentoring junior developers",
+        "Architecting scalable solutions"
       ]
     }
   ]
 
   const skills = [
-    { name: "Python", icon: "🐍", color: "from-blue-500 to-cyan-500" },
-    { name: "Go", icon: "🚀", color: "from-cyan-500 to-blue-500" },
-    { name: "JavaScript", icon: "⚡", color: "from-yellow-500 to-orange-500" },
-    { name: "TypeScript", icon: "📘", color: "from-blue-600 to-blue-700" },
-    { name: "HTML5", icon: "🌐", color: "from-orange-500 to-red-500" },
-    { name: "CSS3", icon: "🎨", color: "from-blue-500 to-purple-500" },
-    { name: "Git", icon: "📝", color: "from-orange-600 to-red-600" },
-    { name: "Docker", icon: "🐳", color: "from-blue-600 to-cyan-600" },
-    { name: "AWS", icon: "☁️", color: "from-orange-500 to-yellow-500" },
-    { name: "CI/CD", icon: "🔄", color: "from-green-500 to-emerald-500" },
-    { name: "Node.js", icon: "🟢", color: "from-green-600 to-green-700" },
-    { name: "Django", icon: "🐘", color: "from-green-700 to-green-800" }
+    { name: "Python", icon: "🐍", color: "from-green-500 to-emerald-500" },
+    { name: "Node.js", icon: "⚡", color: "from-yellow-500 to-orange-500" },
+    { name: "Go", icon: "🔵", color: "from-blue-500 to-cyan-500" },
+    { name: "PostgreSQL", icon: "🐘", color: "from-blue-600 to-indigo-600" },
+    { name: "MongoDB", icon: "🍃", color: "from-green-600 to-emerald-600" },
+    { name: "Docker", icon: "🐳", color: "from-blue-500 to-cyan-500" },
+    { name: "AWS", icon: "☁️", color: "from-orange-500 to-red-500" },
+    { name: "React", icon: "⚛️", color: "from-cyan-500 to-blue-500" },
+    { name: "Microservices", icon: "🔧", color: "from-purple-500 to-pink-500" },
+    { name: "CI/CD", icon: "🔄", color: "from-green-500 to-teal-500" },
+    { name: "Git", icon: "📝", color: "from-orange-500 to-red-500" },
+    { name: "Agile", icon: "🎯", color: "from-blue-500 to-indigo-500" }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.1&quot;%3E%3Ccircle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width%3D%2260%22 height%3D%2260%22 viewBox%3D%220 0 60 60%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg fill%3D%22none%22 fillRule%3D%22evenodd%22%3E%3Cg fill%3D%22%23ffffff%22 fillOpacity%3D%220.05%22%3E%3Ccircle cx%3D%2230%22 cy%3D%2230%22 r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] animate-pulse"></div>
+        
+        <div className="relative max-w-4xl mx-auto text-center z-10">
+          <div className="mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-white bg-clip-text text-transparent">
+              My Professional Journey
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              From a fresh IIT graduate to a successful entrepreneur leading a team of developers. 
+              Here's my evolution through the tech industry.
+            </p>
+          </div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="mb-8">
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-              <Calendar className="w-5 h-5" />
-              <span className="text-sm font-medium">6+ Years of Experience</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3">
+              <span className="text-lg sm:text-xl">🎓</span>
+              <span className="text-sm sm:text-base font-semibold">IIT Guwahati Graduate</span>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3">
+              <span className="text-lg sm:text-xl">🏢</span>
+              <span className="text-sm sm:text-base font-semibold">4 Years Corporate</span>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3">
+              <span className="text-lg sm:text-xl">🚀</span>
+              <span className="text-sm sm:text-base font-semibold">2+ Years Entrepreneur</span>
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Pranay Sanghvi
-          </h1>
-
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-200">
-            My Professional Journey
-          </h2>
-
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-            From junior Python developer at IBM to founder and CEO of a successful software development company
-          </p>
-
           <button
             onClick={scrollToTimeline}
-            className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            aria-label="Scroll to timeline"
+            className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
-            <span>Scroll to Timeline</span>
-            <ChevronDown className="w-5 h-5 group-hover:animate-bounce" />
+            <span className="flex items-center gap-2 sm:gap-3">
+              <span>Explore My Journey</span>
+              <ChevronDown className="w-5 h-5 group-hover:animate-bounce" />
+            </span>
           </button>
         </div>
       </section>
 
       {/* Timeline Section */}
-      <section ref={timelineRef} className="py-20 px-6 bg-white">
+      <section ref={timelineRef} className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Career Timeline
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A journey from academic excellence to entrepreneurial success
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+              A chronological journey through my professional growth and achievements
             </p>
           </div>
 
-          {/* Timeline Container */}
           <div className="relative">
-            {/* Center Line */}
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 hidden md:block"></div>
+            {/* Timeline Line */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-cyan-500"></div>
 
-            {/* Timeline Cards */}
-            <div className="space-y-12">
+            <div className="space-y-12 sm:space-y-16 lg:space-y-20">
               {timelineData.map((item, index) => (
                 <div
                   key={item.id}
-                  className={`timeline-card opacity-0 transform translate-y-10 transition-all duration-700 ${
+                  className={`timeline-card opacity-0 transform translate-y-10 transition-all duration-1000 ${
                     item.side === "left" ? "md:flex-row" : "md:flex-row-reverse"
-                  } flex flex-col md:flex-row items-center gap-8`}
+                  } flex flex-col md:flex-row items-center gap-6 sm:gap-8`}
                 >
-                  {/* Card */}
                   <div className={`w-full md:w-5/12 ${item.side === "left" ? "md:text-right" : "md:text-left"}`}>
                     <div
-                      className={`bg-gradient-to-br ${item.color} rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
+                      className={`bg-gradient-to-br ${item.color} rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}
                     >
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="text-3xl">{item.icon}</div>
+                      <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div className="text-2xl sm:text-3xl">{item.icon}</div>
                         <div>
-                          <h3 className="text-2xl font-bold">{item.title}</h3>
-                          <p className="text-lg opacity-90">{item.role}</p>
+                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">{item.title}</h3>
+                          <p className="text-sm sm:text-base lg:text-lg opacity-90">{item.role}</p>
                         </div>
                       </div>
                       
-                      <div className="mb-4">
-                        <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-sm font-semibold">
-                          <Building className="w-4 h-4" />
+                      <div className="mb-3 sm:mb-4">
+                        <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold">
+                          <Building className="w-3 h-3 sm:w-4 sm:h-4" />
                           {item.company}
                         </div>
                       </div>
 
-                      <div className="mb-6">
-                        <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-sm font-semibold">
-                          <Calendar className="w-4 h-4" />
+                      <div className="mb-4 sm:mb-6">
+                        <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                           {item.period}
                         </div>
                       </div>
 
-                      <ul className="space-y-2">
+                      <ul className="space-y-1 sm:space-y-2">
                         {item.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm">
+                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm">
                             <span className="text-white/80 mt-1">•</span>
                             <span className="text-white/90 leading-relaxed">{detail}</span>
                           </li>
@@ -245,11 +244,9 @@ export default function ProfessionalJourneyPage() {
                     </div>
                   </div>
 
-                  {/* Timeline Dot */}
-                  <div className="hidden md:flex w-8 h-8 bg-white border-4 border-blue-500 rounded-full shadow-lg z-10"></div>
+                  <div className="hidden md:flex w-6 h-6 sm:w-8 sm:h-8 bg-white border-4 border-blue-500 rounded-full shadow-lg z-10"></div>
 
-                  {/* Spacer for mobile */}
-                  <div className="md:hidden w-full h-8"></div>
+                  <div className="md:hidden w-full h-6 sm:h-8"></div>
                 </div>
               ))}
             </div>
@@ -257,66 +254,64 @@ export default function ProfessionalJourneyPage() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent">
               Skills & Technologies
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Technologies and tools I've mastered throughout my journey
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-br ${skill.color} rounded-2xl p-6 text-center text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer`}
+                className={`bg-gradient-to-br ${skill.color} rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer`}
               >
-                <div className="text-3xl mb-3">{skill.icon}</div>
-                <h3 className="font-bold text-sm">{skill.name}</h3>
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{skill.icon}</div>
+                <h3 className="font-bold text-xs sm:text-sm">{skill.name}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-16 px-6">
+      <footer className="bg-slate-900 text-white py-12 sm:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
-            <p className="text-gray-300 mb-8">
+          <div className="mb-6 sm:mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Let's Connect</h3>
+            <p className="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">
               Ready to discuss opportunities or collaborate on exciting projects
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
             <a
               href="mailto:sanghvipranay17@gmail.com"
-              className="flex items-center gap-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+              className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               aria-label="Send email"
             >
-              <Mail className="w-5 h-5" />
-              <span>sanghvipranay17@gmail.com</span>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="break-all">sanghvipranay17@gmail.com</span>
             </a>
 
             <a
               href="https://linkedin.com/in/pranaysanghvi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+              className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               aria-label="LinkedIn profile"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>LinkedIn</span>
             </a>
 
             <a
               href="tel:+919127396670"
-              className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+              className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               aria-label="Call phone number"
             >
               <span>📱</span>
@@ -324,8 +319,8 @@ export default function ProfessionalJourneyPage() {
             </a>
           </div>
 
-          <div className="border-t border-gray-700 pt-8">
-            <p className="text-gray-400">
+          <div className="border-t border-gray-700 pt-6 sm:pt-8">
+            <p className="text-gray-400 text-sm sm:text-base">
               © 2024 Pranay Sanghvi. All rights reserved.
             </p>
           </div>

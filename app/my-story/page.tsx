@@ -157,23 +157,23 @@ export default function MyStoryPage() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto p-6 space-y-12">
+      <div className="relative max-w-7xl mx-auto p-4 sm:p-6 space-y-8 sm:space-y-12">
         {/* Hero Section */}
         <div
-          className={`text-center py-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`text-center py-8 sm:py-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <div className="mb-8">
-            <div className="inline-flex items-center gap-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-8 py-4 mb-6">
-              <GraduationCap className="w-8 h-8" />
-              <span className="text-2xl font-bold">From IIT Graduate to Tech Entrepreneur</span>
+          <div className="mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 sm:gap-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-4 sm:px-8 py-3 sm:py-4 mb-4 sm:mb-6">
+              <GraduationCap className="w-5 h-5 sm:w-8 sm:h-8" />
+              <span className="text-sm sm:text-2xl font-bold">From IIT Graduate to Tech Entrepreneur</span>
             </div>
           </div>
 
-          <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             My Professional Journey
           </h1>
 
-          <p className="text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed px-4">
             From a <span className="text-cyan-400 font-bold">fresh IIT graduate</span> to a
             <span className="text-purple-400 font-bold"> successful entrepreneur</span> leading a team of{" "}
             <span className="text-pink-400 font-bold">6 developers</span>. Here's how I evolved from
@@ -182,15 +182,15 @@ export default function MyStoryPage() {
           </p>
 
           {/* Current Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 max-w-6xl mx-auto">
             {currentStats.map((stat, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-br ${stat.color} rounded-3xl p-4 transform hover:scale-105 transition-all duration-300`}
-                style={{ borderRadius: "25px 8px 25px 8px" }}
+                className={`bg-gradient-to-br ${stat.color} rounded-2xl sm:rounded-3xl p-3 sm:p-4 transform hover:scale-105 transition-all duration-300`}
+                style={{ borderRadius: "20px 6px 20px 6px" }}
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-xl font-black text-white">{stat.value}</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl mb-2">{stat.icon}</div>
+                <div className="text-sm sm:text-lg lg:text-xl font-black text-white">{stat.value}</div>
                 <div className="text-xs font-semibold text-white/90">{stat.label}</div>
               </div>
             ))}
@@ -200,37 +200,37 @@ export default function MyStoryPage() {
         {/* Journey Timeline */}
         <Card
           className="bg-gradient-to-r from-gray-800 to-gray-900 border-2 border-purple-500/30 shadow-2xl"
-          style={{ borderRadius: "40px 20px 40px 20px" }}
+          style={{ borderRadius: "30px 15px 30px 15px" }}
         >
-          <CardContent className="p-10">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <CardContent className="p-6 sm:p-8 lg:p-10">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Evolution Timeline
               </h2>
-              <p className="text-xl text-gray-300">Four distinct phases of my professional growth</p>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300">Four distinct phases of my professional growth</p>
             </div>
 
             <div className="relative">
               {/* Timeline Flow */}
-              <div className="flex flex-wrap justify-center gap-6 mb-12">
+              <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {journey.map((phase, index) => (
                   <div
                     key={index}
                     className={`relative transition-all duration-500 ${
-                      currentPhase === index ? "scale-110 z-10" : "scale-100"
+                      currentPhase === index ? "scale-105 lg:scale-110 z-10" : "scale-100"
                     }`}
                   >
                     <div
-                      className={`bg-gradient-to-br ${phase.color} rounded-3xl p-6 border-4 ${
+                      className={`bg-gradient-to-br ${phase.color} rounded-2xl sm:rounded-3xl p-4 sm:p-6 border-4 ${
                         currentPhase === index ? "border-white shadow-2xl" : "border-transparent"
-                      } transition-all duration-500 min-w-[280px]`}
-                      style={{ borderRadius: "30px 10px 30px 10px" }}
+                      } transition-all duration-500 min-w-[250px] sm:min-w-[280px]`}
+                      style={{ borderRadius: "25px 8px 25px 8px" }}
                     >
-                      <div className="text-4xl mb-3 text-center">{phase.icon}</div>
-                      <div className="text-sm font-bold text-white/80 text-center mb-1">{phase.phase}</div>
-                      <div className="text-xl font-black text-white text-center mb-2">{phase.title}</div>
-                      <div className="text-sm text-white/90 text-center mb-3">{phase.period}</div>
-                      <div className="text-sm text-white/90 text-center mb-4">{phase.description}</div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 text-center">{phase.icon}</div>
+                      <div className="text-xs sm:text-sm font-bold text-white/80 text-center mb-1">{phase.phase}</div>
+                      <div className="text-lg sm:text-xl font-black text-white text-center mb-2">{phase.title}</div>
+                      <div className="text-xs sm:text-sm text-white/90 text-center mb-2 sm:mb-3">{phase.period}</div>
+                      <div className="text-xs sm:text-sm text-white/90 text-center mb-3 sm:mb-4">{phase.description}</div>
                       <div className="space-y-1">
                         {phase.achievements.map((achievement, idx) => (
                           <div key={idx} className="text-xs text-white/80 text-center">
@@ -240,7 +240,7 @@ export default function MyStoryPage() {
                       </div>
                     </div>
                     {index < journey.length - 1 && (
-                      <ArrowRight className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-purple-400 w-6 h-6 hidden lg:block" />
+                      <ArrowRight className="absolute -bottom-6 lg:-right-8 lg:top-1/2 lg:transform lg:-translate-y-1/2 text-purple-400 w-5 h-5 sm:w-6 sm:h-6 hidden sm:block lg:hidden mx-auto" />
                     )}
                   </div>
                 ))}
@@ -250,58 +250,57 @@ export default function MyStoryPage() {
         </Card>
 
         {/* Corporate Experience */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           <div className="text-center">
-            <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
               Corporate Foundation
             </h2>
-            <p className="text-xl text-gray-300">4 years of enterprise experience that shaped my skills</p>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300">4 years of enterprise experience that shaped my skills</p>
           </div>
 
           {corporateExperience.map((exp, index) => (
             <Card
               key={index}
               className={`bg-gradient-to-br ${exp.color} border-4 border-white/20 shadow-2xl hover:scale-[1.02] transition-all duration-300`}
-              style={{ borderRadius: index % 2 === 0 ? "50px 20px 50px 20px" : "20px 50px 20px 50px" }}
+              style={{ borderRadius: index % 2 === 0 ? "30px 15px 30px 15px" : "15px 30px 15px 30px" }}
             >
-              <CardContent className="p-8">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
+                <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
-                    <div className="flex items-center gap-4 mb-4">
-                      <Building className="w-8 h-8 text-white" />
+                    <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                      <Building className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       <div>
-                        <h3 className="text-3xl font-black text-white">{exp.company}</h3>
-                        <p className="text-xl text-white/90">{exp.role}</p>
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white">{exp.company}</h3>
+                        <p className="text-base sm:text-lg lg:text-xl text-white/90">{exp.role}</p>
                       </div>
                     </div>
 
-                    <div className="flex gap-4 mb-4">
-                      <div className="bg-white/20 rounded-full px-4 py-2">
-                        <span className="text-white font-bold">{exp.period}</span>
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-3 sm:mb-4">
+                      <div className="bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2">
+                        <span className="text-white font-bold text-sm sm:text-base">{exp.period}</span>
                       </div>
-                      <div className="bg-white/20 rounded-full px-4 py-2">
-                        <span className="text-white font-bold">{exp.duration}</span>
+                      <div className="bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2">
+                        <span className="text-white font-bold text-sm sm:text-base">{exp.duration}</span>
                       </div>
                     </div>
 
-                    <p className="text-lg text-white/90 mb-6 leading-relaxed">{exp.description}</p>
+                    <p className="text-sm sm:text-base lg:text-lg text-white/90 mb-4 sm:mb-6 leading-relaxed">{exp.description}</p>
 
-                    <div className="bg-white/10 rounded-2xl p-4">
-                      <div className="text-white font-bold mb-2">🚀 Key Projects:</div>
-                      <div className="text-white/90">{exp.projects}</div>
+                    <div className="bg-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4">
+                      <div className="text-white font-bold mb-2 text-sm sm:text-base">🚀 Key Projects:</div>
+                      <div className="text-white/90 text-sm sm:text-base">{exp.projects}</div>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
-                    <div className="text-white font-bold mb-4 text-lg">📚 What I Learned:</div>
+                  <div className="space-y-2 sm:space-y-3">
+                    <div className="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg">📚 What I Learned:</div>
                     {exp.learnings.map((learning, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center gap-3 bg-white/10 rounded-xl p-3"
-                        style={{ borderRadius: "20px 8px 20px 8px" }}
+                        className="flex items-center gap-2 sm:gap-3 bg-white/10 rounded-lg sm:rounded-xl p-2 sm:p-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
-                        <span className="text-white/90">{learning}</span>
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
+                        <span className="text-white/90 text-sm sm:text-base">{learning}</span>
                       </div>
                     ))}
                   </div>
@@ -312,124 +311,83 @@ export default function MyStoryPage() {
         </div>
 
         {/* Entrepreneurial Journey */}
-        <Card
-          className="bg-gradient-to-r from-purple-900 to-pink-900 border-2 border-yellow-500/30 shadow-2xl"
-          style={{ borderRadius: "60px 25px 60px 25px" }}
-        >
-          <CardContent className="p-10">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent">
-                The Entrepreneurial Leap
-              </h2>
-              <p className="text-xl text-gray-300">From employee to employer - building my own company</p>
-            </div>
+        <div className="space-y-6 sm:space-y-8">
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Entrepreneurial Evolution
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300">The journey from solo developer to team leader</p>
+          </div>
 
-            <div className="space-y-8">
-              {entrepreneurialJourney.map((phase, index) => (
-                <div
-                  key={index}
-                  className={`bg-gradient-to-br ${phase.color} rounded-3xl p-8 hover:scale-[1.02] transition-all duration-300`}
-                  style={{ borderRadius: "40px 15px 40px 15px" }}
-                >
-                  <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+            {entrepreneurialJourney.map((phase, index) => (
+              <Card
+                key={index}
+                className={`bg-gradient-to-br ${phase.color} border-4 border-white/20 shadow-2xl hover:scale-[1.02] transition-all duration-300`}
+                style={{ borderRadius: "25px 10px 25px 10px" }}
+              >
+                <CardContent className="p-4 sm:p-6">
+                  <div className="text-center mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl font-black text-white mb-2">{phase.phase}</h3>
+                    <div className="bg-white/20 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block">
+                      <span className="text-white font-bold text-sm sm:text-base">{phase.period}</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 sm:space-y-4">
                     <div>
-                      <h3 className="text-2xl font-black text-white mb-2">{phase.phase}</h3>
-                      <div className="text-white/80 font-semibold mb-4">{phase.period}</div>
-                      <p className="text-lg text-white/90 mb-6">{phase.description}</p>
-
-                      <div className="bg-white/10 rounded-2xl p-4">
-                        <div className="text-white font-bold mb-2">🎯 Outcome:</div>
-                        <div className="text-white/90">{phase.outcome}</div>
-                      </div>
+                      <div className="text-white/80 font-semibold text-sm sm:text-base mb-1">📝 Description:</div>
+                      <div className="text-white/90 text-sm sm:text-base">{phase.description}</div>
                     </div>
 
-                    <div className="space-y-4">
-                      <div className="bg-white/10 rounded-2xl p-4">
-                        <div className="text-white font-bold mb-2">⚡ Challenge:</div>
-                        <div className="text-white/90">{phase.challenge}</div>
-                      </div>
+                    <div>
+                      <div className="text-white/80 font-semibold text-sm sm:text-base mb-1">🎯 Challenge:</div>
+                      <div className="text-white/90 text-sm sm:text-base">{phase.challenge}</div>
+                    </div>
 
-                      <div className="bg-white/10 rounded-2xl p-4">
-                        <div className="text-white font-bold mb-2">💡 Solution:</div>
-                        <div className="text-white/90">{phase.solution}</div>
-                      </div>
+                    <div>
+                      <div className="text-white/80 font-semibold text-sm sm:text-base mb-1">💡 Solution:</div>
+                      <div className="text-white/90 text-sm sm:text-base">{phase.solution}</div>
+                    </div>
+
+                    <div>
+                      <div className="text-white/80 font-semibold text-sm sm:text-base mb-1">🏆 Outcome:</div>
+                      <div className="text-white/90 text-sm sm:text-base">{phase.outcome}</div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Current Success */}
-        <Card
-          className="bg-gradient-to-r from-green-900 to-emerald-900 border-2 border-green-500/30 shadow-2xl"
-          style={{ borderRadius: "45px 20px 45px 20px" }}
-        >
-          <CardContent className="p-10">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Where I Stand Today
-              </h2>
-              <p className="text-xl text-gray-300">Leading a successful software development company</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: "👨‍💼",
-                  title: "Company Founder",
-                  description: "Built and leading a profitable software development company",
-                  metrics: ["6-member development team", "25+ projects delivered", "Multiple ongoing clients"],
-                  color: "from-blue-500 to-cyan-500",
-                },
-                {
-                  icon: "🎯",
-                  title: "Full-Stack Leader",
-                  description: "End-to-end project ownership from conception to maintenance",
-                  metrics: ["Requirements analysis", "Architecture design", "Team management"],
-                  color: "from-purple-500 to-pink-500",
-                },
-                {
-                  icon: "📈",
-                  title: "Proven Track Record",
-                  description: "Consistent delivery of successful projects with real impact",
-                  metrics: ["750+ active SaaS users", "100% client satisfaction", "Growing business"],
-                  color: "from-green-500 to-emerald-500",
-                },
-              ].map((achievement, index) => (
-                <div
-                  key={index}
-                  className={`bg-gradient-to-br ${achievement.color} rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300`}
-                  style={{ borderRadius: "30px 15px 30px 15px" }}
-                >
-                  <div className="text-5xl mb-4">{achievement.icon}</div>
-                  <h3 className="text-2xl font-black text-white mb-4">{achievement.title}</h3>
-                  <p className="text-white/90 leading-relaxed mb-6">{achievement.description}</p>
-                  <div className="space-y-2">
-                    {achievement.metrics.map((metric, idx) => (
-                      <div key={idx} className="bg-white/20 rounded-full px-3 py-1 text-sm font-semibold text-white">
-                        {metric}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
         {/* Call to Action */}
-        <div className="text-center py-16">
-          <div className="bg-gradient-to-r from-cyan-600 to-purple-600 rounded-full px-12 py-8 inline-block shadow-2xl hover:scale-105 transition-all duration-300">
-            <h3 className="text-3xl font-black text-white mb-4">Ready to Add Value to Your Team?</h3>
-            <p className="text-xl text-white/90 mb-6">Bringing 6+ years of experience and entrepreneurial mindset</p>
-            <div className="flex flex-wrap justify-center gap-4 text-lg font-semibold text-white">
-              <span>📧 sanghvipranay17@gmail.com</span>
-              <span>📱 9127396670</span>
-              <span>💼 linkedin.com/in/pranaysanghvi</span>
-            </div>
-          </div>
+        <div className="text-center py-8 sm:py-12">
+          <Card className="bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-white/20 shadow-2xl max-w-4xl mx-auto">
+            <CardContent className="p-6 sm:p-8">
+              <div className="text-3xl sm:text-4xl mb-4 sm:mb-6">🚀</div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3 sm:mb-4">
+                Ready to Start Your Journey?
+              </h3>
+              <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                Whether you're looking to build a custom solution or scale your existing team, I'm here to help you achieve your goals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <a
+                  href="mailto:sanghvipranay17@gmail.com"
+                  className="bg-white text-purple-600 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base"
+                >
+                  📧 Get in Touch
+                </a>
+                <a
+                  href="/professional-journey"
+                  className="bg-white/20 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white/30 transition-colors duration-200 text-sm sm:text-base"
+                >
+                  📊 View Timeline
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
