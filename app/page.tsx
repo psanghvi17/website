@@ -106,7 +106,7 @@ export default function ResumePage() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width%3D%2260%22 height%3D%2260%22 viewBox%3D%220 0 60 60%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg fill%3D%22none%22 fillRule%3D%22evenodd%22%3E%3Cg fill%3D%22%239C92AC%22 fillOpacity%3D%220.1%22%3E%3Ccircle cx%3D%2230%22 cy%3D%2230%22 r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] animate-pulse"></div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto p-4 sm:p-6 space-y-6 sm:space-y-8">
+      <div className="relative max-w-6xl mx-auto p-4 sm:p-6 space-y-6 sm:space-y-8 pt-20 md:pt-6">
         {/* Hero Section */}
         <div className="text-center space-y-4 sm:space-y-6 py-8 sm:py-12 relative">
           <div className="inline-block p-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500">
