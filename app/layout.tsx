@@ -19,12 +19,10 @@ export default function RootLayout({
         <link rel="icon" href="/website/favicon.ico" />
       </head>
       <body>
-        <div className="flex min-h-screen">
-          <Navigation />
-          <main className="flex-1 md:ml-0">
-            {children}
-          </main>
-        </div>
+        <Navigation />
+        <main className="pt-16 md:pt-16">
+          {children}
+        </main>
       </body>
     </html>
   )
