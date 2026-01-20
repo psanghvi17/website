@@ -157,7 +157,7 @@ export default function ResumePage() {
         {/* Stats Dashboard */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { label: "Years Experience", value: "8+", icon: Calendar },
+            { label: "Years Experience", value: "9+", icon: Calendar },
             { label: "Team Size", value: "6", icon: Users },
             { label: "Projects Delivered", value: "10+", icon: Code },
             { label: "Active Users", value: "550+", icon: Zap },
@@ -189,8 +189,8 @@ export default function ResumePage() {
             <div className="p-6 font-mono text-sm">
               <div className="text-emerald-400 mb-2">$ cat about.txt</div>
               <div className="text-gray-300 leading-relaxed">
-                With <span className="text-emerald-400 font-bold">8+ years</span> of experience as a dedicated software
-                engineer, I've evolved from a junior python developer to{" "}
+                With <span className="text-emerald-400 font-bold">9+ years</span> of experience in the tech industry as a dedicated software
+                engineer and founder, I've evolved from a junior python developer to{" "}
                 <span className="text-cyan-400 font-bold">co-founding and leading</span> a bespoke software company.
                 I've spearheaded the design and deployment of impactful solutions across
                 <span className="text-yellow-400 font-bold"> Node.js, PostgreSQL, Docker, and cloud deployment</span>,
