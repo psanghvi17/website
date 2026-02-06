@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0c" />
+      <stop offset="55%" stop-color="#111216" />
+      <stop offset="100%" stop-color="#0b0b0c" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(850 120) rotate(35) scale(380 220)">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 520) rotate(-15) scale(420 260)">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+  <rect width="1200" height="630" fill="url(#glow2)" />
+
+  <rect x="72" y="70" width="1056" height="490" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" />
+
+  <text x="120" y="210" fill="#ECFDF5" font-family="Space Grotesk, Arial, sans-serif" font-size="64" font-weight="700">
+    Pranay Sanghvi
+  </text>
+  <text x="120" y="270" fill="#A7F3D0" font-family="Space Grotesk, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="2">
+    SENIOR SOFTWARE DEVELOPER · CO-FOUNDER
+  </text>
+  <text x="120" y="330" fill="#CBD5F5" font-family="Space Grotesk, Arial, sans-serif" font-size="22" font-weight="500">
+    Building resilient platforms for hiring, logistics, and enterprise transformation.
+  </text>
+
+  <rect x="120" y="390" width="240" height="44" rx="22" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.4)" />
+  <text x="140" y="418" fill="#A7F3D0" font-family="Space Grotesk, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1">
+    INDORE, INDIA
+  </text>
+
+  <rect x="120" y="456" width="420" height="1" fill="rgba(255,255,255,0.12)" />
+
+  <text x="120" y="500" fill="#94A3B8" font-family="Space Grotesk, Arial, sans-serif" font-size="16" font-weight="500">
+    thepranay.com
+  </text>
+  <text x="260" y="500" fill="#94A3B8" font-family="Space Grotesk, Arial, sans-serif" font-size="16" font-weight="500">
+    ·
+  </text>
+  <text x="285" y="500" fill="#94A3B8" font-family="Space Grotesk, Arial, sans-serif" font-size="16" font-weight="500">
+    linkedin.com/in/pranaysanghvi
+  </text>
+</svg>

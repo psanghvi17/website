@@ -39,24 +39,24 @@ export default function Navigation() {
     <>
       {/* Mobile Overlay */}
       {isMobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+        <div
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
           onClick={closeMobileMenu}
         />
       )}
 
       {/* Desktop Top Navigation */}
-      <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-lg">
+      <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-[#0b0b0c]/95 backdrop-blur-md border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <Link 
-                href="/" 
-                className="flex items-center space-x-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200"
+              <Link
+                href="/"
+                className="flex items-center space-x-2 text-xl font-bold text-slate-100 hover:text-emerald-200 transition-colors duration-200"
               >
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">P</span>
+                <div className="w-8 h-8 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center">
+                  <span className="text-emerald-200 font-bold text-sm">P</span>
                 </div>
                 <span>Pranay</span>
               </Link>
@@ -74,8 +74,8 @@ export default function Navigation() {
                     href={item.href}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                        ? "bg-emerald-400/15 text-emerald-200 border border-emerald-300/30 shadow-lg"
+                        : "text-slate-300 hover:bg-white/5 hover:text-emerald-200"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -89,20 +89,22 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Sidebar Navigation */}
-      <nav className={`md:hidden fixed top-0 left-0 h-full z-50 bg-white/95 backdrop-blur-md border-r border-gray-200 shadow-lg transform transition-transform duration-300 ease-in-out ${
-        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}>
+      <nav
+        className={`md:hidden fixed top-0 left-0 h-full z-50 bg-[#0b0b0c]/95 backdrop-blur-md border-r border-white/10 shadow-lg transform transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
         
         <div className="flex flex-col h-full w-64">
           {/* Header */}
           <div className="flex items-center justify-between p-4">
-            <Link 
-              href="/" 
-              className="flex items-center space-x-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200"
+            <Link
+              href="/"
+              className="flex items-center space-x-2 text-xl font-bold text-slate-100 hover:text-emerald-200 transition-colors duration-200"
               onClick={closeMobileMenu}
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
+              <div className="w-8 h-8 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center">
+                <span className="text-emerald-200 font-bold text-sm">P</span>
               </div>
               <span>Pranay</span>
             </Link>
@@ -110,7 +112,7 @@ export default function Navigation() {
             {/* Mobile Close Button */}
             <button
               onClick={closeMobileMenu}
-              className="p-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors duration-200"
+              className="p-2 rounded-lg text-slate-300 hover:bg-white/5 hover:text-emerald-200 transition-colors duration-200"
             >
               <X className="w-6 h-6" />
             </button>
@@ -130,8 +132,8 @@ export default function Navigation() {
                     onClick={closeMobileMenu}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                        ? "bg-emerald-400/15 text-emerald-200 border border-emerald-300/30 shadow-lg"
+                        : "text-slate-300 hover:bg-white/5 hover:text-emerald-200"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -148,7 +150,7 @@ export default function Navigation() {
       <div className="fixed top-4 left-4 z-50 md:hidden">
         <button
           onClick={toggleMobileMenu}
-          className="p-2 rounded-lg bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors duration-200"
+          className="p-2 rounded-lg bg-[#0b0b0c]/90 backdrop-blur-md border border-white/10 shadow-lg text-slate-200 hover:bg-white/5 hover:text-emerald-200 transition-colors duration-200"
         >
           <Menu className="w-6 h-6" />
         </button>

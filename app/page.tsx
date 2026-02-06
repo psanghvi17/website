@@ -1,333 +1,356 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import { Calendar, Award, Code, Users, Terminal, Zap, Database, Server, GitBranch, Cpu } from "lucide-react"
+import {
+  Award,
+  Calendar,
+  Cpu,
+  Database,
+  GitBranch,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Server,
+  Sparkles,
+  Users,
+  Zap,
+} from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
+const skills = [
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "Docker",
+  "Microservices",
+  "MongoDB",
+  "Cloud Deployment",
+  "Systems Design",
+  "Observability",
+  "API Architecture",
+]
+
+const projects = [
+  {
+    name: "RecruitPro",
+    type: "SaaS Platform",
+    users: "550+ Active Users",
+    description: "End-to-end recruitment management with payroll and SEPA automation.",
+    tech: ["Node.js", "PostgreSQL", "Docker", "Microservices"],
+    features: ["Candidate onboarding", "Timesheets", "Payroll & SEPA", "Invoice generation"],
+    status: "Live",
+  },
+  {
+    name: "CustomWise",
+    type: "Integration Platform",
+    description: "Customs broker integration with UK and Ireland government systems.",
+    tech: ["SOAP", "XML", "HMRC API", "Revenue Ireland"],
+    features: ["Multi-agency integration", "Safety & security module", "Real-time processing"],
+    status: "Live",
+  },
+  {
+    name: "Employee Evaluation System",
+    type: "Enterprise Tool",
+    description: "Performance management suite with analytics-driven reporting.",
+    tech: ["Express.js", "App Connect", "PostgreSQL"],
+    features: ["Performance tracking", "Report generation", "Admin dashboard"],
+    status: "Live",
+  },
+  {
+    name: "Architectural CRM",
+    type: "Custom Solution",
+    description: "Project management and client portal for architectural firms.",
+    tech: ["Node.js", "MongoDB", "Custom Workflow Engine"],
+    features: ["Project management", "Client portal", "Attendance tracking"],
+    status: "Live",
+  },
+]
+
+const experience = [
+  {
+    role: "Co-Founder",
+    company: "Cozytech",
+    period: "11/2022 - Present",
+    location: "Indore, India",
+    type: "Startup",
+    highlights: ["Led a team of 6 engineers", "10+ successful launches", "Full-stack architecture"],
+  },
+  {
+    role: "Sr. Software Developer",
+    company: "Kyndryl Labs",
+    period: "09/2021 - 11/2022",
+    location: "Indore, India",
+    type: "Enterprise",
+    highlights: ["Software defined migration", "Cloud modernization", "Enterprise solutions"],
+  },
+  {
+    role: "Software Developer",
+    company: "IBM GTS Labs",
+    period: "07/2018 - 08/2021",
+    location: "Indore, India",
+    type: "Enterprise",
+    highlights: ["Microservices architecture", "Service automation", "Migration tools"],
+  },
+]
+
+const cardBase = "border-white/10 bg-[#111216]/95 text-slate-100 backdrop-blur shadow-[0_18px_50px_rgba(0,0,0,0.45)]"
+const cardSoft = "border-white/10 bg-[#0f1013]/85 text-slate-100 backdrop-blur"
+const badgeBase = "bg-white/10 text-slate-200 border-white/10"
+
 export default function ResumePage() {
-  const [typedText, setTypedText] = useState("")
-  const fullText = "Senior Software Developer & Co-Founder"
-
-  useEffect(() => {
-    let i = 0
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText(fullText.slice(0, i + 1))
-        i++
-      } else {
-        clearInterval(timer)
-      }
-    }, 100)
-    return () => clearInterval(timer)
-  }, [])
-
-  const skills = [
-    { name: "Node.js", icon: "⚡", level: 95 },
-    { name: "Python", icon: "🐍", level: 90 },
-    { name: "PostgreSQL", icon: "🐘", level: 88 },
-    { name: "Docker", icon: "🐳", level: 92 },
-    { name: "Microservices", icon: "🔧", level: 90 },
-    { name: "MongoDB", icon: "🍃", level: 85 },
-    { name: "Web Development", icon: "🌐", level: 95 },
-    { name: "Cloud Deployment", icon: "☁️", level: 87 },
-  ]
-
-  const projects = [
-    {
-      name: "RecruitPro",
-      type: "SaaS Platform",
-      users: "550+ Active Users",
-      description: "End-to-End recruitment management platform",
-      tech: ["Node.js", "PostgreSQL", "Docker", "Microservices"],
-      features: ["Candidate Onboarding", "Timesheet Management", "Payroll & SEPA", "Invoice Generation"],
-      status: "🟢 Production",
-    },
-    {
-      name: "CustomWise",
-      type: "Integration Platform",
-      description: "Customs broker interaction with government agencies",
-      tech: ["SOAP", "XML", "HMRC API", "Revenue Ireland"],
-      features: ["Multi-agency Integration", "Safety & Security Module", "Real-time Processing"],
-      status: "🟢 Production",
-    },
-    {
-      name: "Employee Evaluation System",
-      type: "Enterprise Tool",
-      description: "Performance management and reporting system",
-      tech: ["Express.js", "App Connect", "PostgreSQL"],
-      features: ["Performance Tracking", "Report Generation", "Admin Dashboard"],
-      status: "🟢 Production",
-    },
-    {
-      name: "Architectural CRM",
-      type: "Custom Solution",
-      description: "Complete project management for architectural firms",
-      tech: ["Node.js", "MongoDB", "Custom Workflow Engine"],
-      features: ["Project Management", "Client Portal", "Attendance Tracking"],
-      status: "🟢 Production",
-    },
-  ]
-
-  const experience = [
-    {
-      role: "Co-Founder",
-      company: "Cozytech",
-      period: "11/2022 - Present",
-      location: "Indore",
-      type: "Startup",
-      highlights: ["Leading team of 6 developers", "10+ successful projects", "Full-stack architecture"],
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      role: "Sr. Software Developer",
-      company: "Kyndryl Labs",
-      period: "09/2021 - 11/2022",
-      location: "Bangalore",
-      type: "Enterprise",
-      highlights: ["Software Defined Migration", "Cloud Modernization", "Enterprise Solutions"],
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      role: "Software Developer",
-      company: "IBM GTS Labs",
-      period: "07/2018 - 08/2021",
-      location: "Bangalore",
-      type: "Enterprise",
-      highlights: ["Microservices Architecture", "Service Automation", "Migration Tools"],
-      color: "from-purple-500 to-pink-500",
-    },
-  ]
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-      {/* Animated Background */}
-      <div className="fixed inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width%3D%2260%22 height%3D%2260%22 viewBox%3D%220 0 60 60%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg fill%3D%22none%22 fillRule%3D%22evenodd%22%3E%3Cg fill%3D%22%239C92AC%22 fillOpacity%3D%220.1%22%3E%3Ccircle cx%3D%2230%22 cy%3D%2230%22 r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] animate-pulse"></div>
-      </div>
+    <div className="min-h-screen bg-[#0b0b0c] text-slate-100">
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-emerald-400/25 blur-[120px] animate-glow" />
+        <div className="pointer-events-none absolute top-10 right-10 h-56 w-56 rounded-full bg-amber-300/20 blur-[100px] animate-float-slow" />
+        <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-cyan-400/15 blur-[120px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]" />
 
-      <div className="relative max-w-6xl mx-auto p-4 sm:p-6 space-y-6 sm:space-y-8">
-        {/* Hero Section */}
-        <div className="text-center space-y-4 sm:space-y-6 py-8 sm:py-12 relative">
-          <div className="inline-block p-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500">
-            <div className="bg-gray-900 rounded-full px-4 sm:px-8 py-3 sm:py-4">
-              <div className="flex items-center gap-2 sm:gap-3 text-emerald-400 font-mono text-xs sm:text-sm">
-                <Terminal className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="hidden sm:inline">~/pranay-sanghvi $</span>
-                <span className="sm:hidden">~$</span>
-                <span className="text-white">whoami</span>
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12 sm:space-y-16">
+          <section id="top" className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start animate-fade-in">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-emerald-200">
+                <Sparkles className="h-4 w-4" />
+                Senior Software Developer
+              </div>
+
+              <div className="space-y-4">
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight text-slate-50">
+                  Pranay Sanghvi
+                </h1>
+                <p className="text-lg sm:text-xl text-slate-300 max-w-xl">
+                  Co-founder building resilient, high-performance platforms for hiring, logistics, and enterprise transformation.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <a
+                  className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-2 text-sm font-semibold text-[#0b0b0c] transition hover:bg-emerald-300"
+                  href="mailto:sanghvipranay17@gmail.com"
+                >
+                  <Mail className="h-4 w-4" />
+                  Reach out
+                </a>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200">
+                  <MapPin className="h-4 w-4 text-emerald-200" />
+                  Indore, India
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-emerald-200 transition-colors"
+                  href="#projects"
+                >
+                  Featured Work
+                </a>
+                <a
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-emerald-200 transition-colors"
+                  href="#journey"
+                >
+                  Career Journey
+                </a>
+                <a
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-emerald-200 transition-colors"
+                  href="#education"
+                >
+                  Education
+                </a>
+                <a
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-emerald-200 transition-colors"
+                  href="#contact"
+                >
+                  Contact
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3 text-slate-300">
+                <a
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:text-emerald-200 transition-colors"
+                  href="mailto:sanghvipranay17@gmail.com"
+                  aria-label="Email"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+                <a
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:text-emerald-200 transition-colors"
+                  href="tel:+919127396670"
+                  aria-label="Phone"
+                >
+                  <Phone className="h-4 w-4" />
+                </a>
+                <a
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:text-emerald-200 transition-colors"
+                  href="https://www.linkedin.com/in/pranaysanghvi"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+                <a
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:text-emerald-200 transition-colors"
+                  href="https://github.com/psanghvi17"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  { label: "Years of Experience", value: "9+", icon: Calendar },
+                  { label: "Team Leadership", value: "6 Engineers", icon: Users },
+                  { label: "Products Delivered", value: "10+", icon: Cpu },
+                  { label: "Active Users", value: "550+", icon: Zap },
+                ].map((stat) => (
+                  <Card key={stat.label} className={cardSoft}>
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-2xl font-semibold text-white">{stat.value}</div>
+                          <div className="text-xs uppercase tracking-[0.2em] text-slate-400">{stat.label}</div>
+                        </div>
+                        <stat.icon className="h-6 w-6 text-emerald-200" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
-          </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-            Pranay Sanghvi
-          </h1>
-
-          <div className="h-6 sm:h-8 flex justify-center items-center">
-            <span className="text-lg sm:text-xl md:text-2xl text-gray-300 font-mono">
-              {typedText}
-              <span className="animate-pulse text-emerald-400">|</span>
-            </span>
-          </div>
-
-          {/* Contact Info as Code */}
-          <div className="bg-gray-800/50 backdrop-blur border border-gray-700 rounded-lg p-4 sm:p-6 font-mono text-xs sm:text-sm max-w-2xl mx-auto">
-            <div className="text-emerald-400 mb-2">// Contact Information</div>
-            <div className="space-y-1 text-gray-300">
-              <div className="break-all">
-                <span className="text-cyan-400">const</span> <span className="text-yellow-400">email</span> ={" "}
-                <span className="text-green-400">"sanghvipranay17@gmail.com"</span>;
-              </div>
-              <div>
-                <span className="text-cyan-400">const</span> <span className="text-yellow-400">phone</span> ={" "}
-                <span className="text-green-400">"9127396670"</span>;
-              </div>
-              <div>
-                <span className="text-cyan-400">const</span> <span className="text-yellow-400">location</span> ={" "}
-                <span className="text-green-400">"Bangalore, India"</span>;
-              </div>
-              <div className="break-all">
-                <span className="text-cyan-400">const</span> <span className="text-yellow-400">linkedin</span> ={" "}
-                <span className="text-green-400">"linkedin.com/in/pranaysanghvi"</span>;
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats Dashboard */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          {[
-            { label: "Years Experience", value: "9+", icon: Calendar },
-            { label: "Team Size", value: "6", icon: Users },
-            { label: "Projects Delivered", value: "10+", icon: Code },
-            { label: "Active Users", value: "550+", icon: Zap },
-          ].map((stat, index) => (
-            <Card
-              key={index}
-              className="bg-gray-800/50 border-gray-700 hover:border-emerald-500 transition-all duration-300"
-            >
-              <CardContent className="p-3 sm:p-4 text-center">
-                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mx-auto mb-2" />
-                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-gray-400">{stat.label}</div>
+            <Card className={cardBase}>
+              <CardContent className="p-6 space-y-4">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  I lead product architecture from zero-to-one and scale existing platforms with a focus on performance,
+                  reliability, and delightful UX. Known for blending engineering rigor with founder-level ownership.
+                </p>
+                <div className="rounded-2xl border border-white/10 bg-[#0f1013]/80 p-4">
+                  <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Focus Areas</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {["Architecture", "Cloud", "Product Strategy", "Hiring Systems", "Integrations"].map((tag) => (
+                      <Badge key={tag} className={badgeBase}>
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          </section>
 
-        {/* About Section as Terminal */}
-        <Card className="bg-gray-900/80 border-gray-700 shadow-2xl">
-          <CardContent className="p-0">
-            <div className="bg-gray-800 px-3 sm:px-4 py-2 border-b border-gray-700 flex items-center gap-2">
-              <div className="flex gap-2">
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
-              </div>
-              <span className="text-gray-400 text-xs sm:text-sm font-mono ml-2 sm:ml-4">about.sh</span>
-            </div>
-            <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm">
-              <div className="text-emerald-400 mb-2">$ cat about.txt</div>
-              <div className="text-gray-300 leading-relaxed">
-                With <span className="text-emerald-400 font-bold">9+ years</span> of experience in the tech industry as a dedicated software
-                engineer and founder, I've evolved from a junior python developer to{" "}
-                <span className="text-cyan-400 font-bold">co-founding and leading</span> a bespoke software company.
-                I've spearheaded the design and deployment of impactful solutions across
-                <span className="text-yellow-400 font-bold"> Node.js, PostgreSQL, Docker, and cloud deployment</span>,
-                delivering tailored, scalable, and client-centric products while leading a team of
-                <span className="text-emerald-400 font-bold">6 developers</span>.
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Skills Matrix */}
-        <Card className="bg-gray-900/80 border-gray-700 shadow-2xl">
-          <CardContent className="p-4 sm:p-6 lg:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-              <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400" />
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                Tech Stack
-              </span>
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              {skills.map((skill, index) => (
-                <div key={index} className="group">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <span className="text-xl sm:text-2xl">{skill.icon}</span>
-                      <span className="text-white font-semibold text-sm sm:text-base">{skill.name}</span>
-                    </div>
-                    <span className="text-emerald-400 font-mono text-xs sm:text-sm">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div
-                      className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
+          <section
+            id="journey"
+            className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] animate-fade-in"
+            style={{ animationDelay: "120ms" }}
+          >
+            <Card className={cardBase}>
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center gap-2 text-emerald-200">
+                  <GitBranch className="h-5 w-5" />
+                  <span className="text-sm uppercase tracking-[0.2em]">Career Journey</span>
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Experience Timeline */}
-        <Card className="bg-gray-900/80 border-gray-700 shadow-2xl">
-          <CardContent className="p-4 sm:p-6 lg:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-              <GitBranch className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400" />
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                Career Journey
-              </span>
-            </h2>
-            <div className="space-y-4 sm:space-y-6">
-              {experience.map((exp, index) => (
-                <div key={index} className="relative">
-                  <div className="flex items-start gap-4 sm:gap-6">
-                    <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r ${exp.color} mt-2 flex-shrink-0`}></div>
-                    <div className="flex-1">
-                      <Card className="bg-gray-800/50 border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                        <CardContent className="p-4 sm:p-6">
-                          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
-                            <div>
-                              <h3 className="text-lg sm:text-xl font-bold text-white">{exp.role}</h3>
-                              <p className="text-emerald-400 font-semibold text-sm sm:text-base">{exp.company}</p>
-                              <Badge variant="outline" className="mt-2 border-gray-600 text-gray-300 text-xs">
-                                {exp.type}
-                              </Badge>
-                            </div>
-                            <div className="text-left lg:text-right mt-2 lg:mt-0">
-                              <div className="text-gray-400 font-mono text-xs sm:text-sm">{exp.period}</div>
-                              <div className="text-gray-500 text-xs sm:text-sm">{exp.location}</div>
-                            </div>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.highlights.map((highlight, idx) => (
-                              <Badge key={idx} className="bg-emerald-900/30 text-emerald-300 border-emerald-700 text-xs">
-                                {highlight}
-                              </Badge>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                  {index < experience.length - 1 && <div className="w-px h-4 sm:h-6 bg-gray-700 ml-1.5 sm:ml-2 mt-2"></div>}
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Projects Grid */}
-        <Card className="bg-gray-900/80 border-gray-700 shadow-2xl">
-          <CardContent className="p-4 sm:p-6 lg:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-              <Server className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400" />
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                Featured Projects
-              </span>
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              {projects.map((project, index) => (
-                <Card
-                  key={index}
-                  className="bg-gray-800/50 border-gray-700 hover:border-emerald-500 transition-all duration-300 group"
-                >
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-                          {project.name}
-                        </h3>
-                        <p className="text-emerald-400 text-xs sm:text-sm">{project.type}</p>
-                        {project.users && <p className="text-yellow-400 text-xs sm:text-sm font-mono">{project.users}</p>}
+                <div className="space-y-4">
+                  {experience.map((exp) => (
+                    <div key={exp.company} className="border-l border-white/10 pl-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-lg font-semibold text-white">{exp.role}</div>
+                          <div className="text-sm text-emerald-200">{exp.company}</div>
+                        </div>
+                        <span className="text-xs uppercase text-slate-400">{exp.type}</span>
                       </div>
-                      <span className="text-xs">{project.status}</span>
+                      <div className="text-xs text-slate-400 mt-1">
+                        {exp.period} · {exp.location}
+                      </div>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {exp.highlights.map((highlight) => (
+                          <Badge key={highlight} className={badgeBase}>
+                            {highlight}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-                    <p className="text-gray-300 mb-4 text-sm sm:text-base">{project.description}</p>
+            <Card className={cardBase}>
+              <CardContent className="p-6 space-y-5">
+                <div className="flex items-center gap-2 text-amber-200">
+                  <Cpu className="h-5 w-5" />
+                  <span className="text-sm uppercase tracking-[0.2em]">Toolbox</span>
+                </div>
+                <p className="text-sm text-slate-300">
+                  Comfortably moving from backend systems to product strategy with a strong bias for clarity and clean
+                  interfaces.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <Badge key={skill} className={badgeBase}>
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    "System design reviews",
+                    "Scalable API development",
+                    "Cloud-native deployments",
+                    "Workflow automation",
+                  ].map((item) => (
+                    <div key={item} className="rounded-xl border border-white/10 bg-[#0f1013]/80 px-4 py-3 text-sm text-slate-200">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
 
-                    <div className="space-y-3">
+          <section id="projects" className="space-y-6 animate-fade-in" style={{ animationDelay: "240ms" }}>
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Selected Work</div>
+                <h2 className="font-display text-3xl sm:text-4xl text-white">Platforms that power real operations</h2>
+              </div>
+              <Server className="h-7 w-7 text-emerald-200" />
+            </div>
+            <div className="grid gap-5 lg:grid-cols-2">
+              {projects.map((project) => (
+                <Card key={project.name} className={cardBase}>
+                  <CardContent className="p-6 space-y-4">
+                    <div className="flex items-start justify-between">
                       <div>
-                        <div className="text-cyan-400 text-xs sm:text-sm font-mono mb-2">// Tech Stack</div>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tech.map((tech, idx) => (
-                            <Badge key={idx} variant="outline" className="border-gray-600 text-gray-300 text-xs">
+                        <div className="text-xl font-semibold text-white">{project.name}</div>
+                        <div className="text-sm text-emerald-200">{project.type}</div>
+                        {project.users && <div className="text-xs text-amber-200 mt-1">{project.users}</div>}
+                      </div>
+                      <span className="rounded-full border border-emerald-300/40 px-3 py-1 text-xs text-emerald-200">
+                        {project.status}
+                      </span>
+                    </div>
+                    <p className="text-sm text-slate-300">{project.description}</p>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div>
+                        <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Tech</div>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {project.tech.map((tech) => (
+                            <Badge key={tech} className={badgeBase}>
                               {tech}
                             </Badge>
                           ))}
                         </div>
                       </div>
-
                       <div>
-                        <div className="text-cyan-400 text-xs sm:text-sm font-mono mb-2">// Key Features</div>
-                        <ul className="text-gray-400 text-xs sm:text-sm space-y-1">
-                          {project.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center gap-2">
-                              <span className="text-emerald-400">▸</span>
+                        <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Highlights</div>
+                        <ul className="mt-2 space-y-1 text-xs text-slate-300">
+                          {project.features.map((feature) => (
+                            <li key={feature} className="flex items-center gap-2">
+                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
                               {feature}
                             </li>
                           ))}
@@ -338,74 +361,104 @@ export default function ResumePage() {
                 </Card>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </section>
 
-        {/* Education & Achievements */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          <Card className="bg-gray-900/80 border-gray-700 shadow-2xl">
-            <CardContent className="p-4 sm:p-6 lg:p-8">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                <Database className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
-                <span className="text-white">Education</span>
-              </h2>
-              <div className="bg-gray-800/50 rounded-lg p-4 sm:p-6 border border-gray-700">
-                <h3 className="text-base sm:text-lg font-bold text-emerald-400">M.Tech Computer Science</h3>
-                <p className="text-white font-semibold text-sm sm:text-base">Indian Institute of Technology, Guwahati</p>
-                <p className="text-gray-400 font-mono text-xs sm:text-sm">2016 - 2018</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <Badge className="bg-purple-900/30 text-purple-300 border-purple-700 text-xs">AI</Badge>
-                  <Badge className="bg-blue-900/30 text-blue-300 border-blue-700 text-xs">Information Retrieval</Badge>
-                  <Badge className="bg-green-900/30 text-green-300 border-green-700 text-xs">Algorithms</Badge>
+          <section
+            id="education"
+            className="grid gap-6 lg:grid-cols-2 animate-fade-in"
+            style={{ animationDelay: "360ms" }}
+          >
+            <Card className={cardBase}>
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center gap-2 text-emerald-200">
+                  <Database className="h-5 w-5" />
+                  <span className="text-sm uppercase tracking-[0.2em]">Education</span>
                 </div>
+                <div className="space-y-4">
+                  <div className="rounded-2xl border border-white/10 bg-[#0f1013]/80 p-5">
+                    <div className="text-lg font-semibold text-white">M.Tech Computer Science</div>
+                    <div className="text-sm text-emerald-200">Indian Institute of Technology, Guwahati</div>
+                    <div className="text-xs text-slate-400 mt-1">2016 - 2018</div>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["AI", "Information Retrieval", "Algorithms"].map((tag) => (
+                        <Badge key={tag} className={badgeBase}>
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-[#0f1013]/80 p-5">
+                    <div className="text-lg font-semibold text-white">Bachelor of Engineering in Information Technology</div>
+                    <div className="text-sm text-emerald-200">IET-DAVV</div>
+                    <div className="text-xs text-slate-400 mt-1">2011 - 2015</div>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["Algorithms", "DBMS", "Operating Systems"].map((tag) => (
+                        <Badge key={tag} className={badgeBase}>
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className={cardBase}>
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center gap-2 text-amber-200">
+                  <Award className="h-5 w-5" />
+                  <span className="text-sm uppercase tracking-[0.2em]">Recognition</span>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    {
+                      title: "Patent Holder",
+                      detail: "Application Driven Configuration of Service Management Tools",
+                    },
+                    { title: "GATE CSE 2016", detail: "99.71 percentile" },
+                    { title: "Certified", detail: "Applied Data Science with Python - Level 2" },
+                  ].map((item) => (
+                    <div key={item.title} className="rounded-2xl border border-white/10 bg-[#0f1013]/80 p-4">
+                      {item.title === "Patent Holder" ? (
+                        <a
+                          className="text-sm font-semibold text-white hover:text-emerald-200 transition-colors"
+                          href="https://www.credly.com/badges/2a3071e0-f3d2-4470-90cc-98eba8a3dcf8/linked_in_profile"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {item.title}
+                        </a>
+                      ) : (
+                        <div className="text-sm font-semibold text-white">{item.title}</div>
+                      )}
+                      <div className="text-xs text-slate-300 mt-1">{item.detail}</div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          <section
+            id="contact"
+            className="rounded-3xl border border-white/10 bg-gradient-to-r from-emerald-300/10 via-white/5 to-amber-200/10 p-6 sm:p-8 animate-fade-in"
+            style={{ animationDelay: "480ms" }}
+          >
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Let’s build</div>
+                <h3 className="font-display text-2xl sm:text-3xl text-white">
+                  Ready to design your next product milestone
+                </h3>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gray-900/80 border-gray-700 shadow-2xl">
-            <CardContent className="p-4 sm:p-6 lg:p-8">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                <Award className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
-                <span className="text-white">Achievements</span>
-              </h2>
-              <div className="space-y-3 sm:space-y-4">
-                <div className="bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 border border-yellow-700 rounded-lg p-3 sm:p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl sm:text-2xl">🏆</span>
-                    <h3 className="font-bold text-yellow-400 text-sm sm:text-base">Patent Holder</h3>
-                  </div>
-                  <p className="text-gray-300 text-xs sm:text-sm">Application Driven Configuration of Service Management Tools</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-green-900/20 to-emerald-800/20 border border-green-700 rounded-lg p-3 sm:p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl sm:text-2xl">🎯</span>
-                    <h3 className="font-bold text-green-400 text-sm sm:text-base">GATE CSE 2016</h3>
-                  </div>
-                  <p className="text-gray-300 text-xs sm:text-sm">99.71 percentile</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-blue-900/20 to-cyan-800/20 border border-blue-700 rounded-lg p-3 sm:p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl sm:text-2xl">📜</span>
-                    <h3 className="font-bold text-blue-400 text-sm sm:text-base">Certified</h3>
-                  </div>
-                  <p className="text-gray-300 text-xs sm:text-sm">Applied Data Science with Python - Level 2</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Footer */}
-        <div className="text-center py-6 sm:py-8">
-          <div className="bg-gray-800/50 backdrop-blur border border-gray-700 rounded-lg p-4 sm:p-6 font-mono">
-            <div className="text-emerald-400 mb-2 text-xs sm:text-sm">// Ready to collaborate?</div>
-            <div className="text-gray-300 text-xs sm:text-sm">
-              <span className="text-cyan-400">console.log</span>(
-              <span className="text-green-400">"Let's build something amazing together!"</span>);
+              <a
+                className="inline-flex items-center gap-2 rounded-full bg-amber-200 px-6 py-3 text-sm font-semibold text-[#0b0b0c] transition hover:bg-amber-100"
+                href="mailto:sanghvipranay17@gmail.com"
+              >
+                Start a conversation
+              </a>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>
